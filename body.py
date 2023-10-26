@@ -25,7 +25,7 @@ class body():
                 continue
 
             angle = m.atan2(obj.pos[1]-self.pos[1],obj.pos[0]-self.pos[0])
-            force = (G*self.mass*obj.mass)/(m.sqrt((obj.pos[0]-self.pos[0])**2+(obj.pos[1]-self.pos[1])**2)) ** 1
+            force = (G*self.mass*obj.mass)/(m.sqrt((obj.pos[0]-self.pos[0])**2+(obj.pos[1]-self.pos[1])**2)) ** 2
             forces.append([m.cos(angle)*force,m.sin(angle)*force])
 
         self.forceVector = [sum([force[0] for force in forces]), sum([force[1] for force in forces])]
